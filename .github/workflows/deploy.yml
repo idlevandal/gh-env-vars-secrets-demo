@@ -8,6 +8,8 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
+    environment: testing
+    # When running this job the workflow will use the secrets from the 'testing' environment NOT the general repo wide secrets
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.wcyxffk.mongodb.net
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
